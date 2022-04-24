@@ -18,14 +18,22 @@
             android:exported="false"
             android:theme="@style/Theme.AppCompat.NoActionBar" />
         <activity
+            android:name=".vue.FormationsActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vue.FormationActivity"
+            android:exported="false" />
+        <activity
             android:name=".vue.RacineActivity"
+            android:exported="false" />
+        <activity
+            android:name=".vue.MessageActivity"
             android:exported="false" />
         <activity
             android:name=".vue.AccueilActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
-
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>

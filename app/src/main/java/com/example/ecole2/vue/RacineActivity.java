@@ -9,11 +9,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.ecole2.entite.Formation;
+
 public class RacineActivity extends AppCompatActivity {
     private static String TAG = "RacineActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_racine);
     }
 
     @Override
@@ -29,12 +32,14 @@ public class RacineActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         Log.i(TAG, "onOptionsItemSelected - itemId=" + itemId);
         if(itemId == 1){
-            Log.i(TAG, "Accueil");
+            Log.i(TAG, "Event sur TextView + initialise lecture formations + navigateur");
             Intent intent = new Intent(RacineActivity.this, AccueilActivity.class);
             startActivity(intent);
         }
-        else if(itemId == 2) {
-            Log.i(TAG, "Les formations");
+        else if(itemId == 2){
+            Log.i(TAG, "Les formations : FormationAdapter");
+            Intent intent = new Intent(RacineActivity.this, FormationsActivity.class);
+            startActivity(intent);
         }
         return true;
     }
