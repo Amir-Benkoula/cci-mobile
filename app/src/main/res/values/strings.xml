@@ -1,0 +1,14 @@
+<resources>
+    <string name="app_name">CCI</string>
+    <string name="cci">Chambre de commerce et\nde l\'industrie</string>
+    <string name="presentation">Présentation des formations\nproposées par la CCI</string>
+    <string name="copyright">CCI 2022s</string>
+    <string name="intro">La formation est l\'une des composantes de l\'ADN des CCI. Aujourd\'hui, 500 000 personnes sont formées chaque année dans leurs centres de formation, du CAP au diplôme d\'ingénieur.</string>
+    <string name="formations">Liste des formations</string>
+    <string name="contacter">Nous contacter</string>
+    <string name="nom">Nom</string>
+    <string name="prenom">Prénom</string>
+    <string name="mail">Mail</string>
+    <string name="slogan">A la une : Campus de la CCI</string>
+    <string name="site">Le site CCI</string>
+</resources>
