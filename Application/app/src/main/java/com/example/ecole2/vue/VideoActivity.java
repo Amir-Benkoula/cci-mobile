@@ -26,20 +26,17 @@ public class VideoActivity extends AppCompatActivity {
 
     private void init(String urlVideo){
         if(urlVideo!=null) {
-            wvVideo = findViewById(R.id.wbvYoutube);
+            wvVideo = findViewById(R.id.wvVideo);
             wvVideo.getSettings().setJavaScriptEnabled(true);
             wvVideo.setWebViewClient(new WebViewClient());
             wvVideo.loadUrl(Constante.urlVideoBase + urlVideo);
         }
     }
-
     @Override
     protected void onStop() {
         super.onStop();
         Log.i(TAG,"onStop");
-        if(urlVideo!=null) {
-            wvVideo.destroy();
-        }
+        wvVideo.destroy();
     }
 
 }

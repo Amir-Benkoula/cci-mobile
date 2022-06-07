@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+    <include layout="@layout/include_haut" />
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical" >
+            <TextView
+                style="@style/texte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Envoyer un message"/>
+            <EditText
+                android:id="@+id/editEmail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Email"/>
+            <EditText
+                android:id="@+id/editNom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Nom"/>
+            <EditText
+                android:id="@+id/editPrenom"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Prenom"/>
+            <EditText
+                android:id="@+id/editMessage"
+                android:layout_width="match_parent"
+                android:layout_height="200dp"
+                android:text="Message"/>
+            <Button
+                android:id="@+id/envoyerMessage"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Envoyer"
+                style="@style/bouton"
+                />
+        </LinearLayout>
+        <include layout="@layout/include_bas" />
+</LinearLayout>

@@ -1,8 +1,12 @@
 package com.example.ecole2.model.rest;
 
 import android.util.Log;
-import com.example.ecole2.entite.Etudiant;
+
+import com.example.ecole2.entite.Formation;
+import com.example.ecole2.entite.Message;
 import com.example.ecole2.model.IResponseRestCallback;
+import com.example.ecole2.vue.MessageActivity;
+
 import java.util.List;
 import retrofit.Callback;
 import retrofit.RestAdapter;
@@ -33,18 +37,35 @@ public class ServiceRest implements ServiceRestItf {
 
         serviceRest = adapter.create(IServiceRest.class);
     }
+
     @Override
-    public void lireEtudiants(IResponseRestCallback objetReponse){
+    public void lireFormations(IResponseRestCallback objetReponse){
         ServiceRest.reponse = objetReponse;
-        serviceRest.getEtudiants(new Callback<List<Etudiant>>() {
+        serviceRest.getFormations(new Callback<List<Formation>>() {
             @Override
-            public void success(List<Etudiant> etudiants, Response response) {
-                Log.i(TAG, "========= lireEtudiants etudiants = "+ etudiants);
-                reponse.responseRestCallback(etudiants, 1);
+            public void success(List<Formation> formations, Response response) {
+                Log.i(TAG, "========= lireFormations formations = "+ formations);
+                reponse.responseRestCallback(formations, 1);
             }
             @Override
             public void failure(RetrofitError error) {
-                Log.i(TAG, "========= lireEtudiants ERROR ======= error="+error);
+                Log.i(TAG, "========= lireFormations ERROR ======= error="+error);
+            }
+        });
+    }
+
+    @Override
+    public void postMessage(Message messageObj, IResponseRestCallback objetReponse) {
+        ServiceRest.reponse = objetReponse;
+        serviceRest.postMessage(messageObj, new Callback<Void>() {
+            @Override
+            public void success(Void avoid, Response response) {
+                Log.i(TAG, "========= posterMessage = "+ messageObj);
+                reponse.responseRestCallback(messageObj, 2);
+            }
+            @Override
+            public void failure(RetrofitError error) {
+                Log.i(TAG, "========= postMessage ERROR ======= error=" + error);
             }
         });
     }

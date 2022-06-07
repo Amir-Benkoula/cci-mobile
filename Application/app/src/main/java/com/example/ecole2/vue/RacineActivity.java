@@ -9,11 +9,14 @@ import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 
+import com.example.ecole2.entite.Formation;
+
 public class RacineActivity extends AppCompatActivity {
     private static String TAG = "RacineActivity";
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_racine);
     }
 
     @Override
@@ -21,6 +24,8 @@ public class RacineActivity extends AppCompatActivity {
         MenuInflater inflater = getMenuInflater();
         menu.add(0, 1, Menu.NONE, "Accueil");
         menu.add(0, 2, Menu.NONE, "Les formations");
+        menu.add(0, 3, Menu.NONE, "Nous contacter");
+        menu.add(0, 4, Menu.NONE, "Favoris");
         return true;
     }
 
@@ -29,13 +34,26 @@ public class RacineActivity extends AppCompatActivity {
         int itemId = item.getItemId();
         Log.i(TAG, "onOptionsItemSelected - itemId=" + itemId);
         if(itemId == 1){
-            Log.i(TAG, "Accueil");
+            Log.i(TAG, "Event sur TextView + initialise lecture formations + navigateur");
             Intent intent = new Intent(RacineActivity.this, AccueilActivity.class);
             startActivity(intent);
         }
-        else if(itemId == 2) {
-            Log.i(TAG, "Les formations");
+        else if(itemId == 2){
+            Log.i(TAG, "Les formations : FormationAdapter");
+            Intent intent = new Intent(RacineActivity.this, FormationsActivity.class);
+            startActivity(intent);
         }
+        else if (itemId==3){
+            Log.i(TAG, "Contact");
+            Intent intent = new Intent(RacineActivity.this, MessageActivity.class);
+            startActivity(intent);
+        }
+        else if (itemId==4){
+            Log.i(TAG, "Favoris");
+            Intent intent = new Intent(RacineActivity.this, FavoriActivity.class);
+            startActivity(intent);
+        }
+
         return true;
     }
 }

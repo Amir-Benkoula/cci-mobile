@@ -8,16 +8,18 @@ import android.view.View;
 import android.widget.Button;
 import android.widget.ImageView;
 import com.example.ecole2.R;
+import com.example.ecole2.controleur.ControleurFormation;
 
 
 public class AccueilActivity extends RacineActivity {
     private static String TAG = "AccueilActivity";
     private ImageView imageView;
-
+    private ControleurFormation controleurFormation;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_accueil);
+        controleurFormation = ControleurFormation.getInstance();
         Log.i(TAG, "onCreate");
         Button btnVideo=(Button)findViewById(R.id.boutonVideoId);
         btnVideo.setOnClickListener(new Button.OnClickListener() {

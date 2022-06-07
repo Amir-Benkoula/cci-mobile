@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:baselineAligned="false"
+    android:orientation="vertical" >
+    <include layout="@layout/include_haut" />
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:baselineAligned="false"
+            android:orientation="vertical" >
+            <ImageView
+                android:id="@+id/formationFavoriId"
+                android:layout_width="match_parent"
+                android:layout_height="50dp"
+                android:src="@drawable/favorino"
+                android:onClick="@drawable/favori"
+                android:contentDescription="Favori"
+                android:layout_gravity="center_horizontal" />
+            <TextView
+                android:id="@+id/detailFormationIntitule"
+                style="@style/titre_1"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/detailFormationDateDebut"
+                style="@style/texte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/detailFormationDuree"
+                style="@style/texte"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                />
+            <TextView
+                android:id="@+id/formationDateDebut"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/texteListe" />
+            <TextView
+                android:id="@+id/formationDuree"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/texteListe" />
+            <ImageView
+                android:id="@+id/formationImgId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:adjustViewBounds="true"
+                android:background="@color/white"
+                android:scaleType="centerCrop" />
+            <Button
+                android:id="@+id/formationBoutonVideoId"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Lancer vidéo"
+                style="@style/bouton"
+                />
+            <TextView
+                android:id="@+id/detailFormationLink"
+                style="@style/boutonLink"
+                android:text="@string/site"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:onClick="enventListenerLink"
+                />
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Description de la formation"
+                style="@style/titre_2" />
+            <TextView
+                android:id="@+id/formationDescription"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                style="@style/texte" />
+        </LinearLayout>
+    </ScrollView>
+</LinearLayout>
